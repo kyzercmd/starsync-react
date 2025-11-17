@@ -1,38 +1,215 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 10px;
+}
+
+header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 70px;
+  background-color: #15101c;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  background-color: #15101c;
+}
+
+header .logo img {
+  max-width: 40px;
+  cursor: pointer;
+}
+
+header .logo span {
+  font-size: 18px;
+  margin-left: 12px;
+  cursor: pointer;
+  color: #9e78cf;
+  background-color: #15101c;
+}
+
+.themeSelector {
+  background: #15101c;
+}
+
+header .themeSelector span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 3px solid #9e78cf;
+}
+
+header .themeSelector .activeTheme {
+  height: 30px;
+  width: 30px;
+}
+
+.addTask {
+  padding: 20px 15px;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.addTask form {
+  display: flex;
+  gap: 7px;
+}
+
+.addTask form input {
+  flex-grow: 1;
+  padding: 10px 10px;
+  border: 1px solid #9e78cf;
+  border-radius: 10px;
+  font-size: 10px;
+  color: #9e78cf;
+}
+
+.addTask form input:focus {
+  outline: 0.5px solid #eaeaea;
+}
+
+.addTask form button {
+  background-color: #9e78cf;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.addTask form button:hover {
+  background-color: #32125c;
+  transition: all 300ms;
+}
+
+.showTask {
+  padding: 0px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.showTask div.head {
+  padding: 10px 0px 20px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.showTask div.head div {
+  flex-grow: 1;
+}
+
+.showTask .title {
+  font-size: 18px;
+  user-select: none;
+  color: #ffffff;
+}
+
+.showTask .count {
+  color: #ffffff;
+  padding: 2px 5px;
+  margin-left: 10px;
+  user-select: none;
+  font-size: 18px;
+}
+
+.showTask .clearAll {
+  background-color: #9e78cf;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0px;
+  font-size: 10px;
+}
+
+.showTask .clearAll:hover {
+  background-color: #32125c;
+  transition: all 300ms;
+}
+
+.showTask ul {
+  margin: 30px 5px 30px 5px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.showTask li {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 10px;
+  background-color: #15101c;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.showTask li span {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.showTask li .name {
+  font-size: 12px;
+
+  color: #9e78cf;
+  background-color: #15101c;
+}
+
+.showTask li .time {
+  font-size: 8px;
+  color: #737373;
+  background-color: #15101c;
+}
+
+.showTask li:hover {
+  border-left: 2px solid #9a43af;
+}
+
+.img-button {
+  background: transparent;
+}
+
+.img-button img {
+  display: block;
+  background: transparent;
+}
+
+.edit-button {
+  margin: 0px 10px 0px 0px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.delete-button {
+  margin: 0px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
 }
