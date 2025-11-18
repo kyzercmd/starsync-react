@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
-  background: #0d0714;
   color: #ffffff;
   font-family: "Rubik", sans-serif;
   padding: 0px;
@@ -11,7 +10,26 @@
   list-style: none;
 }
 
+body {
+  background-color: #0d0714;
+}
+
+.default body {
+  background-color: #0d0714;
+  transition: all 500ms;
+}
+
+.light body {
+  background-color: #424266;
+  transition: all 500ms;
+}
+
+.default {
+  background-color: #0d0714;
+  transition: all 500ms;
+}
+
 .light {
-  background-color: #c1afdd;
+  background-color: #424266;
   transition: all 500ms;
 }
