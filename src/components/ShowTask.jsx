@@ -1,32 +1,54 @@
 import remove from "../assets/delete.png";
 import edit from "../assets/edit.png";
 
-export const ShowTask = () => {
-  const tasks = [
-    { name: "Name1", time: "11/17/2025 3:43" },
-    { name: "Name2", time: "11/17/2025 3:43" },
-    { name: "Name3", time: "11/17/2025 3:43" },
-  ];
+export const ShowTask = ({ taskList, setTaskList, task, setTask }) => {
+  const handleEdit = (id) => {
+    const selectedTask = taskList.find((todo) => todo.id === id);
+    setTask(selectedTask);
+  };
+
+  const handleDelete = (id) => {
+    const newTaskList = taskList.filter((todo) => todo.id !== id);
+    setTaskList(newTaskList);
+  };
 
   return (
     <section className="showTask">
       <div className="head">
         <div>
           <span className="title">Tasks</span>
-          <span className="count">0</span>
+          <span>{" -"}</span>
+          <span className="count">{taskList.length}</span>
         </div>
-        <button className="clearAll">Clear</button>
+        <button
+          className="clearAll"
+          onClick={() => {
+            setTaskList([]);
+          }}
+        >
+          Clear
+        </button>
       </div>
       <ul>
-        {tasks.map((task) => (
-          <li>
+        {taskList.map((task) => (
+          <li key={task.id}>
             <span className="name">{task.name}</span>
             <span className="time">{task.time}</span>
             <div className="img-button">
-              <button className="edit-button">
+              <button
+                onClick={() => {
+                  handleEdit(task.id);
+                }}
+                className="edit-button"
+              >
                 <img src={edit} alt="edit"></img>
               </button>
-              <button className="delete-button">
+              <button
+                onClick={() => {
+                  handleDelete(task.id);
+                }}
+                className="delete-button"
+              >
                 <img src={remove} alt="delete"></img>
               </button>
             </div>
